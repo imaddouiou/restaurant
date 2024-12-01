@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Responsive</title>
+    <style>
+        /* Style de base */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        } */
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .menu.hidden {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #444;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Pour petits écrans */
+        @media (max-width: 600px) {
+            .menu {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MONTANA</div>
+        <nav>
+            <div class="menu">
+                <a href="#">Accueil</a>
+                <a href="#">Menu</a>
+                <a href="#">Réservations</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="menu-icon">☰</div>
+        </nav>
+    </header>
+
+    <script>
+        // Ciblage des éléments
+        const menu = document.querySelector('.menu');
+        const menuIcon = document.querySelector('.menu-icon');
+
+        // Écouteur de clic sur l'icône du menu
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('hidden'); // Ajoute ou supprime la classe "hidden"
+        });
+    </script>
+</body>
+</html>
